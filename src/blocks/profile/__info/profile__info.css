@@ -1,0 +1,28 @@
+.profile__info {
+ max-width: 730px;
+ display: grid;
+ grid-template-columns: 294px 250px 150px;
+ grid-template-rows: auto auto;
+ margin: 0 0 0 30px;
+ padding: 0;
+ align-items: center;
+ gap: 16px 18px;
+}
+
+@media (max-width: 1023px) {
+  .profile__info {
+    max-width: 600px;
+    grid-template-columns: 250px 164px 150px;
+  }
+}
+
+@media (max-width: 767px) {
+  .profile__info {
+    max-width: 320px;
+    margin: 26px 0 0;
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-rows: auto auto auto;
+    justify-items: center;
+    gap: 10px;
+  }
+}

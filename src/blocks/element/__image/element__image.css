@@ -1,0 +1,24 @@
+.element__image {
+  width: 282px;
+  height: 282px;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 1023px) {
+  .element__image {
+    width: 350px;
+    height: 350px;
+  }
+}
+
+@media (max-width: 767px) {
+  .element__image {
+    width: 282px;
+    height: 282px;
+  }
+}

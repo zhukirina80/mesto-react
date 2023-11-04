@@ -1,0 +1,10 @@
+.element__place {
+  width: 246px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 22px auto;
+}
+
+
