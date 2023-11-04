@@ -26,7 +26,6 @@ function App() {
 
   const handleCardClick = (selectedCard) => {
     setSelectedCard(selectedCard);
-    console.log(selectedCard)
   }
 
   const closeAllPopups = () => {

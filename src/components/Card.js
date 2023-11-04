@@ -4,7 +4,6 @@ function Card({ card, onCardClick }) {
 
   function handleClick() {
     onCardClick(card)
-    console.log (card);
   }  
 
   return (
