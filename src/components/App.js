@@ -1,4 +1,4 @@
-import React from 'react';
+import {useState} from 'react';
 import '../index.css';
 import Header from './Header';
 import Main from './Main';
@@ -7,10 +7,10 @@ import PopupWithForm from './PopupWithForm';
 import ImagePopup from './ImagePopup';
 
 function App() {
-  const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = React.useState(false);
-  const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = React.useState(false);
-  const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = React.useState(false);
-  const [selectedCard, setSelectedCard] = React.useState({});
+  const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
+  const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState(false);
+  const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = useState(false);
+  const [selectedCard, setSelectedCard] = useState({});
 
   const handleEditProfileClick = () => {
     setIsEditProfilePopupOpen(true);
@@ -48,7 +48,6 @@ function App() {
         name="profile"
         title="Редактировать профиль"
         containerName="container"
-        textBtn="Сохранить"
         isOpen={isEditProfilePopupOpen}
         onClose={closeAllPopups}>
           <input type="text" id="name-input" name="nameInput" className="popup__input popup__input_type_name" placeholder="Имя профиля" minLength="2" maxLength="40" required/>
@@ -72,7 +71,6 @@ function App() {
         name="avatar"
         title="Обновить аватар"
         containerName="container"
-        textBtn="Сохранить"
         isOpen={isEditAvatarPopupOpen}
         onClose={closeAllPopups}>
           <input type="url" id="url-avatar-input" name="avatarInput" className="popup__input popup__input_type_avatar" placeholder="Ссылка на фото" required/>
