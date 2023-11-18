@@ -52,16 +52,9 @@ class Api {
     })
   }
 
-  likeCard(cardId) {
+  changeLikeCardStatus(cardId, like) {
     return this._sendRequest(`${this._baseUrl}/cards/${cardId}/likes`, {
-      method: 'PUT',
-      headers: this._headers
-    })
-  }
-
-  removeLikeCard(cardId) {
-    return this._sendRequest(`${this._baseUrl}/cards/${cardId}/likes`, {
-      method: 'DELETE',
+      method: like ? 'PUT' : 'DELETE',
       headers: this._headers
     })
   }
