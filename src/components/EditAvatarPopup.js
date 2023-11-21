@@ -1,14 +1,12 @@
-import {useState, useRef} from 'react';
+import { useRef } from 'react';
 import PopupWithForm from "./PopupWithForm";
+import usePopupClose from './hooks/usePopupClose';
 
-function EditAvatarPopup({ isOpen, onClose, onUpdateAvatar }) {
+function EditAvatarPopup({ isOpen, onClose, onUpdateAvatar, isLoading }) {
 
-  const [avatar, setAvatar] = useState("");
   const inputRef = useRef();
 
-  function handleChangeAvatar(e) {
-    setAvatar(e.target.value);
-  }
+  usePopupClose(isOpen, onClose);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -23,12 +21,13 @@ function EditAvatarPopup({ isOpen, onClose, onUpdateAvatar }) {
       name="avatar"
       title="Обновить аватар"
       containerName="container"
+      textBtn={isLoading ? 'Сохранение...' : 'Сохранить'}
       isOpen={isOpen}
       onClose={onClose}
       onSubmit={handleSubmit}
       onUpdateAvatar={onUpdateAvatar}>
-        <input value={avatar} ref={inputRef} onChange={handleChangeAvatar}type="url" id="url-avatar-input" name="avatarInput" className="popup__input popup__input_type_avatar" placeholder="Ссылка на фото" required/>
-        <span className="url-avatar-input-error popup__error"></span>
+        <input ref={inputRef} type="url" id="url-avatar-input" name="avatarInput" className="popup__input popup__input_type_avatar" placeholder="Ссылка на фото" required/>
+        <span className="url-avatar-input-error popup__error" />
     </PopupWithForm>
   )
 }
