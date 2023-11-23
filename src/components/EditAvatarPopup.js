@@ -1,12 +1,9 @@
 import { useRef } from 'react';
 import PopupWithForm from "./PopupWithForm";
-import usePopupClose from './hooks/usePopupClose';
 
 function EditAvatarPopup({ isOpen, onClose, onUpdateAvatar, isLoading }) {
 
   const inputRef = useRef();
-
-  usePopupClose(isOpen, onClose);
 
   function handleSubmit(e) {
     e.preventDefault();

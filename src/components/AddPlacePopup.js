@@ -1,13 +1,10 @@
 import { useEffect } from 'react';
 import PopupWithForm from "./PopupWithForm";
-import useForm from './hooks/useForm';
-import usePopupClose from './hooks/usePopupClose';
+import useForm from '../hooks/useForm';
 
 function AddPlacePopup({ isOpen, onClose, onAddPlace, isLoading }) {
 
   const { values, handleChange, setValues } = useForm({ name: '', link: '' });
-
-  usePopupClose(isOpen, onClose);
   
   function handleSubmit(e) {
     e.preventDefault();

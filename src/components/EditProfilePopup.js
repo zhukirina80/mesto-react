@@ -2,16 +2,13 @@ import { useContext } from 'react';
 import { useEffect } from 'react';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
 import PopupWithForm from "./PopupWithForm";
-import useForm from './hooks/useForm';
-import usePopupClose from './hooks/usePopupClose';
+import useForm from '../hooks/useForm';
 
 function EditProfilePopup({ isOpen, onClose, onUpdateUser, isLoading }) {
 
   const currentUser = useContext(CurrentUserContext);
 
   const { values, handleChange, setValues } = useForm({ name: '', about: '' });
-
-  usePopupClose(isOpen, onClose);
 
   function handleSubmit(e) {
     e.preventDefault();
